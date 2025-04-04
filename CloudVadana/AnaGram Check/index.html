@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anagram Check</title>
+    <style>
+        .heading{
+            text-align: center;
+            color: blue;
+            text-shadow: 1px 2px black;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">Anagram Check</h1>
+    <h1>First Text : <span id="txt1"></span></h1>
+    <h1>Second Text :<span id="txt2"></span></h1>
+    <h1>Result : <span id="result"></span></h1>
+    <script>
+        function areAnagrams(str1, str2) {
+   
+            str1 = str1.replace(/\s/g, '').toLowerCase();
+            str2 = str2.replace(/\s/g, '').toLowerCase();
+
+        if (str1.length !== str2.length) {
+            return false;
+        }
+        return str1.split('').sort().join('') === str2.split('').sort().join('');
+}
+
+
+        let text1=prompt("Enter First String")
+        document.getElementById("txt1").innerText=text1
+        let text2=prompt("Enter Second String")
+        document.getElementById("txt2").innerText=text2
+        let res=(areAnagrams(text1,text2)); 
+        document.getElementById("result").innerText=res
+
+    
+
+
+    </script>
+    
+</body>
+</html>
